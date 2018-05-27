@@ -14,21 +14,23 @@ baseurl: ""
 # Of course don't forget to change the username and projectname to YOUR username and project
 
 # Name of website
-title: Rob's Data Explorations
+title: questions and data
 
 # Short description of your site
-description: A collection of random data analysis projects
+description: Using data to find answers
 
 # --- Navigation bar options --- #
 
 # List of links in the navigation bar
 navbar-links:
   About Me: "aboutme"
-  Resources:
-    - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
-    - Learn markdown: "http://www.markdowntutorial.com/"
-    - GitHub Pages: "https://pages.github.com/"
-  Author's home: "http://deanattali.com"
+  Inspiration:
+    - VizWiz: "http://www.vizwiz.com/"
+    - FiveThirtyEight: "http://fivethirtyeight.com/"
+    - information is beautiful: "https://informationisbeautiful.net/"
+    - the functional art: "http://www.thefunctionalart.com/"
+    - visualising data: "http://www.visualisingdata.com/
+     
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
