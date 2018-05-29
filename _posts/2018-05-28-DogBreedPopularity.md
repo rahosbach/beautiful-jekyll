@@ -18,3 +18,4 @@ Following from issue #3 above, another approach to measuring the popularity of a
 2. **Popularity can mean more than the population's general interest at any given time.** It may not be fair to rate a breed's popularity on the population's Google searches for a given time period, especially given #1.  After all, number of dogs registered for a particular breed shows more commitment than simple Google searches for that breed, and one could argue that commitment to a particular breed over time is a good indicator of popularity.
 
 ### Data Exploration
+![Top 3 dog breeds by state](/img/State_Rank.pdf)
