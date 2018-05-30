@@ -4,7 +4,6 @@ title: Which Dog Breeds are the Most Popular in the United States?
 tags: [AKC, Google Trends, dog, breed, ggplot, bump chart, heatmap, R]
 ---
 
-### Introduction
 Growing up, dogs were always a part of my life.  From purebred German Shepherds and Labrador Retrievers to various mixed breeds, I was never left wanting for a dog to play with.  Even now, my family has a nine-year-old Basset Hound named Danny, and it would be an understatement to say that Danny is a magnet for attention when we take him on walks.  Sadly, it's not a common occurrence to see a Basset Hound nowadays.  But, interestingly, one of the most common comments we hear from people who want to meet Danny is, "My family had a Basset Hound when we grew up!"  My curiosity piqued, this post is a look into dog breed popularity over time.
 
 ### Approach
