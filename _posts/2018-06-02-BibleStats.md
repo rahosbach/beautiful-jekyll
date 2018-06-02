@@ -24,7 +24,7 @@ First, there are various English translations of the Bible, some of which are mo
 With the number of words, number of verses, and number of chapters for each book of the Bible in-hand, I then decided to look into word and verse "efficiency" by calculating the average number of words per verse, average number of words per chapter, and average number of verses per chapter for each book of the Bible.  The interactive bubble chart below allows you to compare all of the books of the Bible using these six metrics.  The color of the box represents its literary category, and the size (area) of the box represents the value of the metric you are using (_e.g._, number of chapters or words per verse).  If you hover over a bubble, the ranking chart beneath the bubble chart will highlight the ranking line for the book you hovered over, showing you how that book ranks across each of the six measures.
 
 <iframe src="https://public.tableau.com/views/BooksoftheBible/Dashboard1?:showVizHome=no&:embed=true"
- width="750" height="1500"></iframe>
+ width="650" height="900"></iframe>
 
 I find this bubble chart quite interesting to play around with.  Some of the take-aways I see are:
 1. Psalms has the largest number of chapters and verses, but the smallest average number of words per chapter.
