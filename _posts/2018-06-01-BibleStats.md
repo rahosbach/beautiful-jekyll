@@ -21,7 +21,7 @@ Having each book of the Bible categorized, I now set out to find out how many ch
 
 With the number of words, number of verses, and number of chapters for each book of the Bible in-hand, I then decided to look into word and verse "efficiency" by calculating the average number of words per verse, average number of words per chapter, and average number of verses per chapter for each book of the Bible.  The interactive treemap below allows you to compare all of the books of the Bible using these six metrics.  The color of the box represents its literary category, and the size (area) of the box represents the value of the metric you are using (_e.g._, number of chapters or words per verse).
 
-<iframe src="https://public.tableau.com/views/BooksoftheBible/Dashboard1?:embed=y&:display_count=yes"
+<iframe src="https://public.tableau.com/views/BooksoftheBible/Dashboard1?:showVizHome=no&:embed=true"
  width="650" height="1200"></iframe>
 
 I find this treemap quite interesting to play around with.  Some of the take-aways I see are:
