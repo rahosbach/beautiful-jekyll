@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How Safe are Food Trucks in Chico, CA?
-tags: [Chico, food truck]
+tags: [Chico, food truck, Pareto chart, Tableau]
 ---
 
 A couple months ago, my wife, sister, brother-in-law, and I were discussing what we'd like to go get for dinner that night.  After some ideas were tossed around that didn't gain much traction, I proposed the idea of grabbing food at the nearby taco truck.  My wife and I had eaten at this taco truck once before, and it was quite tasty.  But, to my surprise, my brother-in-law quickly vetoed the idea, saying that he doesn't eat at food trucks because he can't trust them to be sanitary.  Of course, this suggestion of his became perfect fodder for a this blog post.
@@ -21,3 +21,9 @@ Why did I go into the perspectives regarding food trucks in a general sense?  We
 To tackle this question of whether or not food trucks in Chico, CA are any less safe than their brick-and-mortar counterparts, I decided to scrape food inspection reports from the [Butte County Public Health Department website](http://www.buttecounty.net/publichealth/EnvironmentalHealth/ConsumerProtection/FoodInspectionReports.aspx).  The scrape provided me with food inspection reports from 2016 to June 2018 for 15 cities in Butte County (including Chico) and over 1,200 separate food establishments (including restaurants, convenience stores, bakeries, and the like).  None of these establishments are food trucks, but at the very least I obtained some data to dig through.
 
 ### Results (for brick-and-mortar establishments)
+Take a look at the following storyboard which covers Butte County as a whole, and then drills down to look at how Chico establishments have fared over the last couple years.
+
+<iframe src="https://public.tableau.com/views/ButteCountyFoodInspectionReports/Story1?:showVizHome=no&:embed=true" width="650" height="860"></iframe>
+
+### Conclusion
+Well, I'm sorry to say that the short answer to our original question is that we simply do not know how food trucks in Chico, CA fare compared to their brick-and-mortar restaurant counterparts.  However, we've been able to take a look into the food inspection results for the brick-and-mortar establishments in Butte County as a whole, and Chico more specifically.  It's revealing to me how many well-known (and well-loved) Chico food establishments have received numerous minor (and sometimes major) violations over the last couple of years.
