@@ -42,7 +42,7 @@ The three sets of plots below show the same data, except that the definition of 
 3. The winner's rank was **at least 25 ranks lower** than the loser's rank.
 
 ![3-Year rolling average of fraction of matches resulting in an upset (winner is ranked at least 5 spots lower than the loser) for the ATP and WTA tours by year (1968-2018) and surface type.]({{http://rahosbach.github.io}}/img/atp_vs_wta_upsets/atpvswta_rolling3_threshold5.png)
-![3-Year rolling average of fraction of matches resulting in an upset (winner is ranked at least 10 spots lower than the loser) for the ATP and WTA tours by year (1968-2018) and surface type.]({{http://rahosbach.github.io}}/img/atp_vs_wta_upsets/atpvswta_rolling3_threshold20.png)
+![3-Year rolling average of fraction of matches resulting in an upset (winner is ranked at least 10 spots lower than the loser) for the ATP and WTA tours by year (1968-2018) and surface type.]({{http://rahosbach.github.io}}/img/atp_vs_wta_upsets/atpvswta_rolling3_threshold10.png)
 ![3-Year rolling average of fraction of matches resulting in an upset (winner is ranked at least 25 spots lower than the loser) for the ATP and WTA tours by year (1968-2018) and surface type.]({{http://rahosbach.github.io}}/img/atp_vs_wta_upsets/atpvswta_rolling3_threshold25.png)
 
 The data start a bit later for the WTA in these plots due to not having all the required data for the earlier years (_e.g._, not having rankings for both players).  As expected, the fraction of matches resulting in an upset decreases as the required difference in rankings for an upset increases.  But, there are quite a few unexpected findings here for me:
