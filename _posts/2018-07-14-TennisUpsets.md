@@ -12,3 +12,5 @@ So, this post is all about figuring out if there are more "upsets" (_i.e._, the 
 
 ### Data
 Thankfully, a guy by the name of [Jeff Sackmann](https://github.com/JeffSackmann) has collected data on professional tennis matches dating back to 1968!  The data files—one file per year—are freely available on his GitHub repositories: [tennis_atp](https://github.com/JeffSackmann/tennis_atp) and [tennis_wta](https://github.com/JeffSackmann/tennis_wta).
+
+{% include ATP_vs_WTA_Upsets.html %}
