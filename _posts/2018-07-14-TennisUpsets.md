@@ -40,7 +40,7 @@ To generate the results for this post I used the [Matplotlib](https://matplotlib
 > - _The cells will take a minute or so to load, mainly because of the data collection step._
 > - _The interactive plots will be displayed at the very bottom of the notebook if all cells have been run._
 
-When originally looking at the results, the year-by-year data showed quite a bit of variance.  Therefore, I went ahead and used a moving average of three years for plotting the fraction of matches resulting in an upset. (Note that the time frame for the moving average can be adjusted in the notebook's interactive plot.)  A three-year moving average kept some of the variance, but allowed for a clearer look into the trends in upsets by Tour (ATP or WTA), surface type, and year.
+When originally looking at the results, the year-by-year data showed quite a bit of variance.  Therefore, I went ahead and used a moving average of three years for plotting the fraction of matches resulting in an upset. (Note that the time frame for the moving average can be adjusted in the notebook's interactive plot.)  A three-year moving average kept some of the variance, but allowed for a clearer look into the trends in upsets.
 
 The plot below shows the fraction of matches resulting in an upset by year and tour, for all surface types.  In this case, the definition of an upset is that the winner's rank was at least five ranks lower than the loser's rank, which seems like a reasonable default definition.
 
