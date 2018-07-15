@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Are there More Upsets in the ATP or WTA?
-tags: [ATP, jupyter, python, tennis, time series, WTA]
+tags: [ATP, Binder, Jupyter, Matplotlib, Python, tennis, time series, WTA]
 ---
 
 I've been a pretty serious tennis fan since high school.  Back then, Andre Agassi and Pete Sampras were still battling it out, along with Justine Henin-Hardenne (now Justine Henin) and Kim Clijsters.  It was great fun to watch.
@@ -32,7 +32,13 @@ The annual data files contain everything we need for this analysis:
 - Winner and loser world rankings
 
 ### Results
-To generate the results for this post I used the [Matplotlib](https://matplotlib.org/) library in Python 3.  The full analysis, including creation of the plots, was completed in a [Jupyter](http://jupyter.org/) notebook.  [An interactive version of the notebook can be viewed here](https://mybinder.org/v2/gh/rahosbach/rahosbach.github.io/master?filepath=%2F_includes%2FATP_vs_WTA_Upsets.ipynb), but I provide a discussion of the key results below.
+To generate the results for this post I used the [Matplotlib](https://matplotlib.org/) library in Python 3.  The full analysis, including creation of the plots, was completed in a [Jupyter](http://jupyter.org/) notebook.  [An interactive version of the notebook can be viewed here](https://mybinder.org/v2/gh/rahosbach/rahosbach.github.io/master?filepath=%2F_includes%2FATP_vs_WTA_Upsets.ipynb) (created using [Binder](https://mybinder.org/)), but I provide a discussion of the key results below.
+
+> _Quickly, here are some notes on using the interactive notebook:_
+> - _Once you click the link, the notebook may take a few seconds to load._
+> - _If you have never used a Jupyter notebook before, click "Run" on the top menu bar and then "Run all cells."_
+> - _The cells will take a minute or so to load, mainly because of the data collection step._
+> - _The interactive plot will be displayed at the very bottom of the notebook if all cells have been run._
 
 When originally looking at the results, the year-by-year data showed quite a bit of variance.  Therefore, I went ahead and used a moving average of three years for plotting the fraction of matches resulting in an upset. (Note that the time frame for the moving average can be adjusted in the notebook's interactive plot.)  A three-year moving average kept some of the variance, but allowed for a clearer look into the trends in upsets by Tour (ATP or WTA), surface type, and year.
 
