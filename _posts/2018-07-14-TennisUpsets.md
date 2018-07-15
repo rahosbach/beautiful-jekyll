@@ -27,7 +27,7 @@ Thankfully, a guy by the name of [Jeff Sackmann](https://github.com/JeffSackmann
 
 The annual data files contain everything we need for this analysis:
 - ATP (men's) or WTA (women's) Tour
-- Date of the match
+- Date of the match (from 1968 up to May 2018)
 - Court surface the match was played on
 - Winner and loser world rankings
 
@@ -38,27 +38,30 @@ To generate the results for this post I used the [Matplotlib](https://matplotlib
 > - _Once you click the link, the notebook may take a few seconds to load._
 > - _If you have never used a Jupyter notebook before, click "Run" on the top menu bar and then "Run all cells."_
 > - _The cells will take a minute or so to load, mainly because of the data collection step._
-> - _The interactive plot will be displayed at the very bottom of the notebook if all cells have been run._
+> - _The interactive plots will be displayed at the very bottom of the notebook if all cells have been run._
 
 When originally looking at the results, the year-by-year data showed quite a bit of variance.  Therefore, I went ahead and used a moving average of three years for plotting the fraction of matches resulting in an upset. (Note that the time frame for the moving average can be adjusted in the notebook's interactive plot.)  A three-year moving average kept some of the variance, but allowed for a clearer look into the trends in upsets by Tour (ATP or WTA), surface type, and year.
 
-The three sets of plots below show the same data, except that the definition of an upset is different in each:
+The plot below shows the fraction of matches resulting in an upset by year and tour, for all surface types.  In this case, the definition of an upset is that the winner's rank was at least five ranks lower than the loser's rank, which seems like a reasonable default definition.
+
+![3-Year rolling average of fraction of matches resulting in an upset (winner is ranked at least 5 spots lower than the loser) for the ATP and WTA tours by year (1968-2018).]({{http://rahosbach.github.io}}/img/atp_vs_wta_upsets/atpvswta_rolling3_threshold5_nosurface.png)
+
+The two sets of plots below show the same data, except that the fraction of matches resulting in an upset are now broken out by surface type as well, and the definition of an upset is different in each set of plots:
 1. The winner's rank was **at least five ranks lower** than the loser's rank.
-2. The winner's rank was **at least 10 ranks lower** than the loser's rank.
-3. The winner's rank was **at least 25 ranks lower** than the loser's rank.
+2. The winner's rank was **at least 25 ranks lower** than the loser's rank.
+Again, you are able to change the definition of an upset in the interactive plot. However, looking here at a difference in rankings of five and 25 allows us to see the general effect of changing the definition of an upset.
 
 ![3-Year rolling average of fraction of matches resulting in an upset (winner is ranked at least 5 spots lower than the loser) for the ATP and WTA tours by year (1968-2018) and surface type.]({{http://rahosbach.github.io}}/img/atp_vs_wta_upsets/atpvswta_rolling3_threshold5.png)
-![3-Year rolling average of fraction of matches resulting in an upset (winner is ranked at least 10 spots lower than the loser) for the ATP and WTA tours by year (1968-2018) and surface type.]({{http://rahosbach.github.io}}/img/atp_vs_wta_upsets/atpvswta_rolling3_threshold10.png)
 ![3-Year rolling average of fraction of matches resulting in an upset (winner is ranked at least 25 spots lower than the loser) for the ATP and WTA tours by year (1968-2018) and surface type.]({{http://rahosbach.github.io}}/img/atp_vs_wta_upsets/atpvswta_rolling3_threshold25.png)
 
 The data start a bit later for the WTA in these plots due to not having all the required data for the earlier years (_e.g._, not having rankings for both players).  As expected, the fraction of matches resulting in an upset decreases as the required difference in rankings for an upset increases.  But, there are quite a few unexpected findings here for me:
-1. The fraction of matches resulting in an upset is roughly equivalent for all surfaces over time.
-2. **The fraction of matches resulting in an upset is quite similar between the ATP and the WTA** (on the order of 25%-30% of matches).
-3. I never expected that 25% or more matches would result in the winner being ranked at least five spots below the loser.  (I thought the fraction would be much lower, especially for the ATP Tour.)
+1. On average, the ATP Tour actually had **more** matches resulting in upset than the WTA Tour until about 2013.  Since then, the WTA Tour has experienced more upsets, but the Tour trends in upsets are converging again in the last year or two.
+2. The fraction of matches resulting in an upset is roughly equivalent for all surfaces over time.
+3. I never expected that at least 20% of matches would result in the winner being ranked at least five spots below the loser.  (I thought the fraction would be much lower, especially for the ATP Tour.)
 4. About 15% of matches result in an upset where the winner is ranked at least 25 spots below the loser.  In this case, grass appears to result in slightly more upsets than the other surfaces for the ATP Tour.
-5. The fraction of upsets appeared to have peaked around the year 2000 for the ATP Tour, and has been in decline since.  Conversely, the fraction of matches resulting in an upset on the WTA Tour has been rising over the time period of these data.  This may explain why, anecdotally, I thought that more WTA matches resulted in upsets.
+5. The fraction of upsets appeared to have peaked around the year 2000 for the ATP Tour, and has been in decline since (other than the past year or two).  Conversely, the fraction of matches resulting in an upset on the WTA Tour has been rising over the time period of these data.  This may explain why, anecdotally, I thought that more WTA matches resulted in upsets.
 
 ### Conclusions
-According to this analysis, the resounding answer to this post's motivating question is: **Neither the ATP Tour nor the WTA Tour appear to have more upsets at the Master's Series and Grand Slam level.**  That said, it would appear that the number of upsets is trending upward for the WTA, whereas the trend is downward for the ATP Tour.  Hopefully, Mr. Sackmann will continue aggregating tennis data, and this can be revisited in a couple years to see if anything has changed.
+According to this analysis, the answer to this post's motivating question is: **Neither the ATP Tour nor the WTA Tour appear to have significantly more upsets at the Master's Series and Grand Slam level at this time.**  However, the ATP Tour actually had more upsets than the WTA Tour until about 2013.  Furthermore, it would appear that the number of upsets is trending upward for the WTA, whereas the trend has been generally downward since the year 2000 for the ATP Tour.  Hopefully, Mr. Sackmann will continue aggregating tennis data, and this can be revisited in a couple years to see if anything has changed.
 
 Again, the [interactive analysis notebook](https://mybinder.org/v2/gh/rahosbach/rahosbach.github.io/master?filepath=%2F_includes%2FATP_vs_WTA_Upsets.ipynb) is published and available for your perusal.
