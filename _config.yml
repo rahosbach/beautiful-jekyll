@@ -140,6 +140,7 @@ title-separator: "-"
 # Output options (more information on Jekyll's site)
 timezone: "America/Los_Angeles"
 markdown: kramdown
+exclude: ['*.Rmd']
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
 paginate: 5
