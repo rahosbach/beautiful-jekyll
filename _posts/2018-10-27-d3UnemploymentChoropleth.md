@@ -4,12 +4,6 @@ title: Experimenting with d3.js to Create an Animated Choropleth Map of U.S. Une
 tags: [choropleth, d3.js, map, unemployment]
 ---
 
-Intro text...
-
-### Data and Useful Examples
-...
-
-### The Map
 <svg width="960" height="600"></svg>
 <style>
 div.tooltip {   
@@ -232,6 +226,21 @@ div.tooltip {
 	    }
 };
 </script>
+### Using the Map
+1. The map will animate automatically to show unemployment rates by county from 1990 to 2017.
+2. At any point, you can hover over the year label (on the right side) to stop the animation.  Moving your cursor horizontally over the year label will automatically update the year that is shown on the choropleth (move left to decrease the year, right to increase the year).
+3. Hover over a county to see a tooltip providing the county name and the unemployment rate in that year.
 
-### Conclusions
-...
+### Introduction
+I've wanted to learn [d3.js](https://d3js.org/) for quite a while now, and I was recently able to take Emma Saunders' LinkedIn Learning course entitled, ["D3.js Essential Training for Data Scientists."](https://www.linkedin.com/learning/d3-js-essential-training-for-data-scientists).  A wealth of material was covered in the course, and it was the best resource I've found thus far to try to learn the intricacies of d3.
+
+After completing the course, and therefore having at least some inkling of how to generate plots in d3, I wanted to create my own d3 plot.  [Choropleth maps](https://en.wikipedia.org/wiki/Choropleth_map) were not covered in the course, but I thought it would be an interesting challenge to develop a choropleth map that showed annual average unemployment rate by U.S. county over a range of years.  I knew there were some examples I could use to get me started, but little did I know the challenge this would be.
+
+### Data and Useful Examples
+There were a number of example d3 plots I used to inform my choropleth map, but a particular [choropleth map](https://beta.observablehq.com/@mbostock/d3-choropleth) created by [Mike Bostock](https://bost.ocks.org/mike/) (the creator of d3.js) provided a link to the [U.S. Bureau of Labor Statistics webpage](https://www.bls.gov/lau/#tables) from which I could download annual average unemployment rates by U.S. county for 1990 through 2017.
+
+Thanks to the great community of d3.js developers out there, a plethora of great d3 plot examples can be found online.  Here is a listing of the key examples I used to help inform the coding of my d3 choropleth map:
+- [jgu's The Wealth & Health of Nations](http://bl.ocks.org/michellechandra/0b2ce4923dc9b5809922) helped with understanding how to animate my choropleth map by year.
+- [Mike Bostock's D3 Choropleth](https://beta.observablehq.com/@mbostock/d3-choropleth) provided my first understanding of how to generate a county-level choropleth map in d3. 
+- [Mike Bostock's Threshold Choropleth](https://bl.ocks.org/mbostock/3306362) provided a threshold legend as well as a more compact way to bring in and incorporate my data.
+- [Michelle Chandra's Basic US State Map - D3](http://bl.ocks.org/michellechandra/0b2ce4923dc9b5809922) provided styling and animation for the tooltips in my map.
