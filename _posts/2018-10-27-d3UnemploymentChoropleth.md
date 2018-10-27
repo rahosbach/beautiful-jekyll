@@ -52,10 +52,10 @@ div.tooltip {
   cursor: ew-resize;
 }
 </style>
-<script src="http://d3js.org/d3.v4.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 <script src="https://d3js.org/topojson.v1.min.js"></script>
-<script src="http://d3js.org/queue.v1.min.js"></script>
+<script src="https://d3js.org/queue.v1.min.js"></script>
 <script>
   var svg = d3.select("svg");
   var path = d3.geoPath();
