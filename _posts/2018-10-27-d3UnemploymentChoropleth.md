@@ -166,7 +166,7 @@ div.tooltip {
 			    	div.transition()        
 			        .duration(200)      
 			        .style("opacity", .9);      
-			      div.html(nameById[d.id] + ': <br><strong>' + rateById[d.id] + '%</strong>')
+			      div.html(nameById[d.id] + ' in ' + Math.round(currentYear) +': <br><strong>' + rateById[d.id] + '%</strong>')
 			        .style("left", (d3.event.pageX) + "px")     
 			        .style("top", (d3.event.pageY - 28) + "px");})   
 			   // fade out tooltip on mouse out               
@@ -242,5 +242,5 @@ There were a number of example d3 plots I used to inform my choropleth map, but 
 Thanks to the great community of d3.js developers out there, a plethora of great d3 plot examples can be found online.  Here is a listing of the key examples I used to help inform the coding of my d3 choropleth map:
 - [jgu's The Wealth & Health of Nations](http://bl.ocks.org/michellechandra/0b2ce4923dc9b5809922) helped with understanding how to animate my choropleth map by year.
 - [Mike Bostock's D3 Choropleth](https://beta.observablehq.com/@mbostock/d3-choropleth) provided my first understanding of how to generate a county-level choropleth map in d3. 
-- [Mike Bostock's Threshold Choropleth](https://bl.ocks.org/mbostock/3306362) provided a threshold legend as well as a more compact way to bring in and incorporate my data.
+- [Mike Bostock's Threshold Choropleth](https://bl.ocks.org/mbostock/3306362) provided a threshold legend as well as a more compact way to bring in and incorporate [my data](https://raw.githubusercontent.com/rahosbach/rahosbach.github.io/master/_data/unemployment_by_county_year.csv).
 - [Michelle Chandra's Basic US State Map - D3](http://bl.ocks.org/michellechandra/0b2ce4923dc9b5809922) provided styling and animation for the tooltips in my map.
