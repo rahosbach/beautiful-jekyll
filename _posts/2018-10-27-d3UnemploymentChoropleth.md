@@ -1,0 +1,237 @@
+---
+layout: post
+title: Experimenting with d3.js to Create an Animated Choropleth Map of U.S. Unemployment by County
+tags: [choropleth, d3.js, map, unemployment]
+---
+
+Intro text...
+
+### Data and Useful Examples
+...
+
+### The Map
+<svg width="960" height="600"></svg>
+<style>
+div.tooltip {   
+ 	position: absolute;           
+	text-align: center; 
+	vertical-align: middle;          
+	width: auto;                 
+	height: auto;                 
+	padding: 2px;             
+	font: 12px sans-serif;    
+	color: white;    
+	background: gray;   
+	border: 0px;      
+	border-radius: 8px;           
+	pointer-events: none;         
+}
+
+.counties :hover {
+  stroke: black;
+  stroke-width: 2px;
+}
+
+.county-borders {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 0.5px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  pointer-events: none;
+}
+
+.year.label {
+  font: 500 85px "Helvetica Neue";
+  fill: gray;
+}
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+  cursor: ew-resize;
+}
+</style>
+<script src="http://d3js.org/d3.v4.min.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src="https://d3js.org/topojson.v1.min.js"></script>
+<script src="http://d3js.org/queue.v1.min.js"></script>
+<script>
+  var svg = d3.select("svg");
+  var path = d3.geoPath();
+  var format = d3.format("");
+  var height = 600;
+  var width = 960;
+
+  var colorScheme = d3.schemeReds[9];
+  colorScheme.unshift("#eee");
+
+  var color = d3.scaleQuantize()
+    .domain([0, 20])
+    .range(colorScheme);
+  var x = d3.scaleLinear()
+    .domain(d3.extent(color.domain()))
+    .rangeRound([600,860]);
+  var g = svg.append("g")
+    .attr("transform", "translate(0,40)");
+
+  g.selectAll("rect")
+    .data(color.range().map(function(d){ return color.invertExtent(d); }))
+    .enter()
+    .append("rect")
+      .attr("height", 8)
+      .attr("x", function(d){ return x(d[0]); })
+      .attr("width", function(d){ return x(d[1]) - x(d[0]); })
+      .attr("fill", function(d){ return color(d[0]); });
+
+  g.append("text")
+    .attr("class", "caption")
+    .attr("x", x.range()[0])
+    .attr("y", -6)
+    .attr("fill", "#000")
+    .attr("text-anchor", "start")
+    .attr("font-weight", "bold")
+    .text("Unemployment Rate (%)");
+
+  g.call(d3.axisBottom(x)
+  	.tickSize(13)
+  	.tickFormat(format)
+  	.tickValues(color.range().slice(1).map(function(d){ return color.invertExtent(d)[0]; })))
+	.select(".domain")
+  	.remove();
+
+  var div = d3.select("body")
+    .append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
+
+  // Add the year label; the value is set on transition.
+  var label = svg.append("text")
+    .attr("class", "year label")
+    .attr("text-anchor", "end")
+    .attr("y", height - 125)
+    .attr("x", width)
+    .text(1990);
+
+  queue()
+    .defer(d3.json, "https://d3js.org/us-10m.v1.json")
+    .defer(d3.csv, "https://raw.githubusercontent.com/rahosbach/rahosbach.github.io/master/_data/unemployment_by_county_year.csv")
+    .await(ready);
+  
+  function ready(error, us, unemployment) {
+    if (error) throw error;
+
+  		// Initialize data to 1990
+  		var currentYear = 1990;
+
+  		// Add an overlay for the year label.
+  		var box = label.node().getBBox();
+  
+  		var overlay = svg.append("rect")
+    		.attr("class", "overlay")
+    		.attr("x", box.x)
+    		.attr("y", box.y)
+    		.attr("width", box.width)
+    		.attr("height", box.height)
+    		.on("mouseover", enableInteraction);
+  
+	  	// Start a transition that interpolates the data based on year.
+	  	svg.transition()
+	      .duration(25000)
+	      .ease(d3.easeLinear)
+	      .tween("year", tweenYear)
+	      //.each();
+
+      counties = svg.append("g")
+        .attr("class", "counties")
+		    .selectAll("path")
+		    .data(topojson.feature(us, us.objects.counties).features)
+		    .enter()
+		    .append("path")
+		    .attr("d", path)
+		    .call(style,currentYear)
+
+      function style(counties, year){
+        newunemployment = interpolateData(year);
+
+			var rateById = {};
+			var nameById = {};
+
+	  	newunemployment.forEach(function(d) {
+	  		var newcode = '';
+        if (d.code.length < 5) {
+          newcode = '0' + d.code;
+          d.code = newcode;
+        } 
+        rateById[d.code] = +d.rate;
+        nameById[d.code] = d.name;
+      });
+      
+			counties.style("fill", function(d) { return color(rateById[d.id]); })
+				.on("mouseover", function(d) {      
+			    	div.transition()        
+			        .duration(200)      
+			        .style("opacity", .9);      
+			      div.html(nameById[d.id] + ': <br><strong>' + rateById[d.id] + '%</strong>')
+			        .style("left", (d3.event.pageX) + "px")     
+			        .style("top", (d3.event.pageY - 28) + "px");})   
+			   // fade out tooltip on mouse out               
+			   .on("mouseout", function(d) {       
+			      div.transition()        
+			       .duration(500)      
+			       .style("opacity", 0);});
+		}
+
+		svg.append("path")
+		  .datum(topojson.mesh(us, us.objects.states, (a, b) => a !== b))
+		  .attr("fill", "none")
+		  .attr("stroke", "white")
+		  .attr("stroke-linejoin", "round")
+		  .attr("d", path);
+
+		// After the transition finishes, you can mouseover to change the year.
+	  function enableInteraction() {
+      var yearScale = d3.scaleLinear()
+        .domain([1990, 2017])
+        .range([box.x + 10, box.x + box.width - 10])
+        .clamp(true);
+
+      // Cancel the current transition, if any.
+      svg.transition().duration(0);
+
+      overlay
+        .on("mouseover", mouseover)
+        .on("mouseout", mouseout)
+        .on("mousemove", mousemove)
+        .on("touchmove", mousemove);
+
+      function mouseover() { label.classed("active", true); }
+      function mouseout() { label.classed("active", false); }
+      function mousemove() { displayYear(yearScale.invert(d3.mouse(this)[0])); }
+    }
+
+	  // Tweens the entire chart by first tweening the year, and then the data.
+	  // For the interpolated data, the dots and label are redrawn.
+	  function tweenYear() {
+	    var year = d3.interpolateNumber(1990, 2017);
+	    return function(t) { displayYear(year(t)); };
+	  }
+
+    // Updates the display to show the specified year.
+    function displayYear(year) {
+      currentYear = year;
+      counties.call(style,year)
+      label.text(Math.round(year));
+    }
+
+    // Interpolates the dataset for the given (fractional) year.
+    function interpolateData(year) {
+      return unemployment.filter(function(row) {
+      return row['year'] == Math.round(year);
+    });
+	    }
+};
+</script>
+
+### Conclusions
+...
