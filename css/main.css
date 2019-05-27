@@ -688,6 +688,9 @@ td.gutter pre {
 .highlight > pre {
   padding: 0;
 }
+.highlight > pre.highlight {
+  padding: 9.5px;
+}
 td.code pre {
   border-width: 0 0 0 2px;
   border-style: solid;
@@ -705,7 +708,7 @@ td.gutter {
 }
 
 /* --- Notification boxes --- */
-.box-note, .box-warning, .box-error {
+.box-note, .box-warning, .box-error, .box-success {
   padding: 15px 15px 15px 10px;
   margin: 20px 20px 20px 5px;
   border: 1px solid #eee;
@@ -726,6 +729,11 @@ td.gutter {
 .box-error {
   background-color: #f4dddb;
   border-left-color: #c0392b;
+}
+
+.box-success {
+  background-color: #98FB98;
+  border-left-color: #3CB371;
 }
 
 /* Fix table border github gist snippets */
