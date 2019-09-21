@@ -5,7 +5,7 @@ tags: [heatmap, poker, Seaborn, Texas Holdem]
 ---
 
 ### Introduction
-TFor some time now I've pondered the ease or difficulty in developing a poker simulator in Python.  Well, a little over a week ago I decided to try my hand (no pun intended) at creating a program that would simulate a hand of [Texas Holdem](https://en.wikipedia.org/wiki/Texas_hold_%27em) for a given number of players.
+For some time now I've pondered the ease or difficulty in developing a poker simulator in Python.  Well, a little over a week ago I decided to try my hand (no pun intended) at creating a program that would simulate a hand of [Texas Holdem](https://en.wikipedia.org/wiki/Texas_hold_%27em) for a given number of players.
 
 Texas Holdem is a well-defined poker variation with a basic structure: 
 1. Each player is dealt two "hole" cards that are hidden from all other players.
