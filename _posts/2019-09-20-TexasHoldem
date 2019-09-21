@@ -22,7 +22,25 @@ I created the simulator using [Python 3](https://www.python.org/) in a [Jupyter 
 In order to estimate the win percentages for sets of hole cards (as well as eventual winning five-card hands), I used the [Monte Carlo method](https://en.wikipedia.org/wiki/Monte_Carlo_method).  Specifically, I simulated 100,000 hands each for 2-11 players (_i.e._, 100,000 hands for two players, 100,000 hands for three players, etc.).
 
 ### Results
-Using parallelization, running 100,000 hands for each of 2-11 players took about 15 minutes to complete on my laptop.
+Using parallelization, running 20,000 hands for each of 2-11 players took about 38 minutes to complete on my laptop (a basic, four-core machine).  While I would have liked to have simulated more hands, I only have so much patience ;-).
+
+The heatmap below allows an easy comparison of the win+draw percentage as a function of a player's hole cards and the total number of players in the hand. (A draw is when two or more players have final five-card hands that are equivalent; these players would split the pot.)  In this case, I aggregated hole cards into a small collection of categories that I wanted to see: pairs, suited connectors (_i.e._, two cards of the same suit that are only one rank away from each other, like 9-10 of spades), suited (_i.e._, two cards of the same suit that are not connected), connectors (_i.e._, two cards that are only one rank away from each other, not suited), and A-through-4 high cards (_i.e._, hands that are not suited and are not connected).  This results in a reasonable number of categories to compare, as opposed to trying to compare [all possible combinations](https://www.tightpoker.com/poker_hands.html) of hole cards.
+
+![Heatmap of win+draw percentage as a function of starting hole cards and number of players in the hand for Texas Holdem.]({{http://rahosbach.github.io}}/img/texas_holdem/heatmap_hole_cards.svg)
+
+The next heatmap allows one to compare the win+draw percentage as a function of a player's final five-card hand and the total number of players in the hand.
+
+![Heatmap of win+draw percentage as a function of final five-card hand and number of players in the hand for Texas Holdem.]({{http://rahosbach.github.io}}/img/texas_holdem/heatmap_final_hand.svg)
 
 ### Concluding Thoughts
-...
+As expected, increasing the number of players in the hand reduces a given set of hole card's (or final five card hand's) win+draw percentage.  Here are a few other observations from the heatmaps:
+
+**Hole Cards**
+1. It would appear that A-high and K-high hole cards tend to have a higher win+draw percentage than suited connectors, suited, or connectors.
+2. With only two players, having a pair, suited connectors, suited, A-high, K-high, or Q-high hole cards gives a greater than 50% chance of winning or drawing the hand.  But, once there are three players, only a pair has a greater than 50% chance of winning or drawing the hand.  Finally, once you get to four players, a pair only has a 39% percent chance of winning or drawing.
+
+**Final Hands**
+1. Straight flushes will essentially always win or draw the hand.  Even with 10 players in the hand, a straight flush wins or draws 87% of the time.
+2. With only two players, 2-pair has a 68% chance of winning or drawing, with 3-of-a-kind providing a 75% chance.  However, with three players in the hand, 2-pair only has a 48% chance of winning or drawing.
+3. With only two players, a high card has about a 17% chance of winning or drawing the hand.  However, with four or more players, the win+draw percentage for high cards is essentially 0%.
+4. A straight is the lowest hand that has at least a 50% chance of winning or drawing the hand, no matter how many players are playing.
