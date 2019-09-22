@@ -19,10 +19,10 @@ The simulator I created does not take into account any betting.  Instead, it ass
 
 I created the simulator using [Python 3](https://www.python.org/) in a [Jupyter notebook](https://jupyter.org/).  The code for the simulator only relies on Python's standard libraries (specifically, `collections`, `itertools`, `operator`, and `random`).  In addition, I did make use of Python's `multiprocessing` library and the [joblib](https://joblib.readthedocs.io/) library to achieve faster run times using parallel processing.  Finally, to analyze and plot the final results I relied on [Pandas](https://pandas.pydata.org/) and [Seaborn](https://seaborn.pydata.org/), respectively.
 
-In order to estimate the win percentages for sets of hole cards (as well as eventual winning five-card hands), I used the [Monte Carlo method](https://en.wikipedia.org/wiki/Monte_Carlo_method).  Specifically, I simulated 20,000 hands each for 2-11 players (_i.e._, 20,000 hands for two players, 20,000 hands for three players, etc.).
+In order to estimate the win percentages for sets of hole cards (as well as eventual winning five-card hands), I used the [Monte Carlo method](https://en.wikipedia.org/wiki/Monte_Carlo_method).  Specifically, I simulated 50,000 hands each for 2-11 players (_i.e._, 50,000 hands for two players, 50,000 hands for three players, etc.).
 
 ### Results
-Using parallelization, running 20,000 hands for each of 2-11 players took about 38 minutes to complete on my laptop (a basic, four-core machine).  While I would have liked to have simulated more hands, I only have so much patience ;-).
+Using parallelization, running 50,000 hands for each of 2-11 players took about 22 minutes to complete on my laptop (a basic, four-core machine).
 
 The heatmap below allows an easy comparison of the win+draw percentage as a function of a player's hole cards and the total number of players in the hand. (A draw is when two or more players have final five-card hands that are equivalent; these players would split the pot.)  In this case, I aggregated hole cards into a small collection of categories that I wanted to compare: pairs, suited connectors (_i.e._, two cards of the same suit that are only one rank away from each other, like 9-10 of spades), suited (_i.e._, two cards of the same suit that are not connected), connectors (_i.e._, two cards that are only one rank away from each other, not suited), and A-through-4 high cards (_i.e._, hands that are not suited and are not connected). (Note that a 3-high card is technically a connected hand: 3-2.)  This results in a reasonable number of categories to compare, as opposed to trying to compare [all possible combinations](https://www.tightpoker.com/poker_hands.html) of hole cards.
 
@@ -37,10 +37,10 @@ As expected, increasing the number of players in the hand reduces a given set of
 
 **Hole Cards**
 1. It would appear that A-high and K-high hole cards tend to have a higher win+draw percentage than suited connectors, suited, or connectors.
-2. With only two players, having a pair, suited connectors, suited, A-high, K-high, or Q-high hole cards gives a greater than 50% chance of winning or drawing the hand.  But, once there are three players, only a pair has a greater than 50% chance of winning or drawing the hand.  Finally, once you get to four players, a pair only has a 39% percent chance of winning or drawing.
+2. With only two players, having a pair, suited connectors, suited, A-high, K-high, or Q-high hole cards gives a greater than 50% chance of winning or drawing the hand.  But, once there are three players, only a pair has a 50% chance of winning or drawing the hand.  Finally, once you get to four players, a pair only has a 39% percent chance of winning or drawing.
 
 **Final Hands**
-1. Straight flushes will essentially always win or draw the hand.  Even with 10 players in the hand, a straight flush wins or draws 87% of the time. (Note that straight flushes do not commonly arise in games of Texas Holdem.  Therefore, given the nature of this Monte Carlo analysis, the win+draw percentages are based on relatively few instances of players achieving a straight flush.)
-2. With only two players, 2-pair has a 68% chance of winning or drawing, with 3-of-a-kind providing a 75% chance.  However, with three players in the hand, 2-pair only has a 48% chance of winning or drawing.
-3. With only two players, a high card has about a 17% chance of winning or drawing the hand.  However, with four or more players, the win+draw percentage for high cards is essentially 0%.
+1. Straight flushes will essentially always win or draw the hand.  Even with 10 players in the hand, a straight flush wins or draws 87% of the time. (Note that straight flushes do not commonly arise in games of Texas Holdem.  Straight flushes only occurred in 0.03% of the hands in this simulation.  Therefore, given the nature of this Monte Carlo analysis, the win+draw percentages are based on relatively few instances of players achieving a straight flush.)
+2. With only two players, 2-pair has a 68% chance of winning or drawing, with 3-of-a-kind providing a 76% chance.  However, with three players in the hand, 2-pair only has a 48% chance of winning or drawing.
+3. With only two players, a high card has an 18% chance of winning or drawing the hand.  However, with four or more players, the win+draw percentage for high cards drops to 1% and lower.
 4. A straight is the lowest hand that has at least a 50% chance of winning or drawing the hand, no matter how many players are playing.
