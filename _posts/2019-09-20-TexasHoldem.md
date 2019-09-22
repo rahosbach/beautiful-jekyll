@@ -1,7 +1,7 @@
 ---
 layout: post
 title: What Affect does the Number of Players have on Texas Holdem Results?
-tags: [heatmap, poker, Seaborn, Texas Holdem]
+tags: [heatmap, line plot, poker, Seaborn, Texas Holdem]
 ---
 
 ### Introduction
@@ -12,7 +12,7 @@ Texas Holdem is a well-defined poker variation with a basic structure:
 2. Five community cards are dealt in three stages (betting happens at each stage).
 3. Each player makes the best possible five-card hand from their two hole cards and the five community cards (poker hand descriptions and hierarchy are described [here](https://www.cardplayer.com/rules-of-poker/hand-rankings)).
 
-In considering the hole cards, a general rule of thumb is that pairs, suited high cards (_e.g._, A-K or A-Q), and even off-suit A-K are the best to play with.  In contrast, a 2-7 off-suit is the worst (no flush opportunity and no potential to connect the two cards in a straight).  However, what I really wanted to know is how does the win percentage associated with a particular set of hole cards vary based on the number of players in the hand.  My hypothesis is that the win percentage will be inversely proportional to the number of players (_i.e._, increasing the number of players decreases the hand's win percentage) by some unknown degree.
+In considering the hole cards, a general rule of thumb is that pairs, suited high cards (_e.g._, A-K or A-Q), and even off-suit A-K are the best to play with.  In contrast, a 2-7 off-suit is the worst (no flush opportunity and no potential to connect the two cards in a straight).  However, what I really wanted to know is how does the win percentage associated with a particular set of hole cards vary based on the number of players in the hand.  My hypothesis is that the win percentage will be inversely proportional to the number of players (_i.e._, increasing the number of players decreases the hand's win percentage), perhaps in an exponential fashion.
 
 ### Methodology and Assumptions
 The simulator I created does not take into account any betting.  Instead, it assumes that all players remain in the hand until the very end.  In this way, the resulting win percentages should be conservative, because in an actual hand of Texas Holdem there generally only remain two or three players by the time the final (fifth) community card is dealt.  Therefore, in a real-world setting the eventual competition at the end of the hand would be lower.
@@ -28,12 +28,16 @@ The heatmap below allows an easy comparison of the win+draw percentage as a func
 
 ![Heatmap of win+draw percentage as a function of starting hole cards and number of players in the hand for Texas Holdem.]({{http://rahosbach.github.io}}/img/texas_holdem/heatmap_hole_cards.svg)
 
+The next chart is a line plot of the exact same data that were plotted in the previous heatmap.  This line plot is included in order to see _how_ the win+draw percentage declines as the number of players increases (_i.e._, linearly, exponentially, etc.).
+
+![Line plot of win+draw percentage as a function of starting hole cards and number of players in the hand for Texas Holdem.]({{http://rahosbach.github.io}}/img/texas_holdem/lineplot_hole_cards.svg)
+
 The next heatmap allows one to compare the win+draw percentage as a function of a player's final five-card hand and the total number of players in the hand.
 
 ![Heatmap of win+draw percentage as a function of final five-card hand and number of players in the hand for Texas Holdem.]({{http://rahosbach.github.io}}/img/texas_holdem/heatmap_final_hand.svg)
 
 ### Concluding Thoughts
-As expected, increasing the number of players in the hand reduces a given set of hole card's (or final five card hand's) win+draw percentage.  Here are a few other observations from the heatmaps:
+As expected, increasing the number of players in the hand reduces a given set of hole card's (or final five card hand's) win+draw percentage.  From the line plot, it appears that this reduction is exponential in nature.  Here are a few other observations from the heatmaps:
 
 **Hole Cards**
 1. It would appear that A-high and K-high hole cards tend to have a higher win+draw percentage than suited connector, suited, or connector hole cards.
