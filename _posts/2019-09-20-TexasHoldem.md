@@ -37,7 +37,11 @@ The next heatmap allows one to compare the win+draw percentage as a function of 
 ![Heatmap of win+draw percentage as a function of final five-card hand and number of players in the hand for Texas Holdem.]({{http://rahosbach.github.io}}/img/texas_holdem/heatmap_final_hand.svg)
 
 ### Concluding Thoughts
-As expected, increasing the number of players in the hand reduces a given set of hole card's (or final five card hand's) win+draw percentage.  From the line plot, it appears that this reduction is exponential in nature.  Here are a few other observations from the heatmaps:
+As expected, increasing the number of players in the hand reduces a given set of hole card's (or final five card hand's) win+draw percentage.  From the line plot, it appears that this reduction is exponential in nature.  
+
+The second heatmap showing the win+draw percentage for final hands as a function of the number of players contains an interesting result: The win+draw percentages for straights are _higher_ than the win+draw percentages for flushes (a flush being more valuable than a straight in the poker hand hierarchy).  This is likely because when a straight occurs in Texas Holdem, it is more likely than a flush to result in a draw, because a straight is relying on mostly community cards that are shared between players.  That rationale is also true of flushes; however, one player is more likely to win (not draw) with a flush because flushes are compared first with their highest cards, then the next highest cards, etc.  In fact, the only way for two players to draw with a flush is if all five community cards make up the best-hand flush for each player.
+
+Here are a few other observations from the heatmaps:
 
 **Hole Cards**
 1. It would appear that A-high and K-high hole cards tend to have a higher win+draw percentage than suited connector, suited, or connector hole cards.
