@@ -269,7 +269,7 @@ function ready(error, us, covid) {
                             .style("opacity", .9);
                         div.html(nameById[d.id] + ' on ' + formatDate(currentDate) + ': <br><strong>' + format(rateById[d.id]) + ' ' + metric.slice(0, -1) + '(s) </strong>')
                             .style("left", (d3.event.x) + "px")
-                            .style("top", (d3.event.y) + "px");
+                            .style("top", (d3.event.y - 100) + "px");
                     } else {
                         return null;
                     }
