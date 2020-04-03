@@ -352,7 +352,7 @@ function ready(error, us, covid) {
 ### Using the Map
 1. The map will animate automatically to show cumulative Covid-19 confirmed cases or Covid-19-related deaths (depending on what is selected) by county.
 2. At any point, you can hover over the date label (in the bottom-right corner) to stop the animation.  Moving your cursor horizontally over the date label will automatically update the date that is shown on the choropleth (move left to decrease the date, right to increase the date).
-3. Hover over a county to see a tooltip providing the county name and the cumulative confirmed cases or deaths by that date.
+3. Hover over a county to see a tooltip providing the county name and the cumulative confirmed cases or deaths by that date. (A tooltip will not appear for any counties that have yet to record a confirmed Covid-19 case or Covid-19-related death.)
 
 ### Introduction
 By now, there are thousands (if not millions) of visualizations interpreting Covid-19 data as they become available.  However, I have yet to see a time-lapse choropleth map of Covid-19 confirmed cases and Covid-19-related deaths for the U.S.  On March 26, 2020, the New York Times (NYT) released their [**Coronavirus (Covid-19) Data in the United States**](https://github.com/nytimes/covid-19-data) GitHub repository to the public.  This repository contains cumulative Covid-19 confirmed cases and Covid-19-related deaths by state and county, dating back to the first reported Covid-19 confirmed case in Washington State on January 21, 2020.  Furthermore, the NYT is updating this repository frequently as new data become available.
