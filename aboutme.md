@@ -12,4 +12,5 @@ After earning my M.S., I have been blessed with the opportunity to work on inter
 - [R](https://www.r-project.org/) ([tidyverse](https://www.tidyverse.org/), among others)
 - [Python](https://www.python.org/) ([pandas](https://pandas.pydata.org/), [numpy](http://www.numpy.org/), [scikit-learn](http://scikit-learn.org/stable/), among others)
 - [Tableau](https://www.tableau.com/)
+- [d3.js](https://d3js.org/)
 - SQL (as well as database design)
