@@ -163,9 +163,9 @@ function ready(error, us, covid) {
             .style("opacity", 0);
 
         if (metric == "cases") {
-            var metric_label = "Confirmed Cases";
+            var metric_label = " Confirmed Cases";
         } else {
-            var metric_label = "Deaths"
+            var metric_label = "-Related Deaths"
         }
 
         if (metric == "cases") {
@@ -207,7 +207,7 @@ function ready(error, us, covid) {
             .attr("fill", "#000")
             .attr("text-anchor", "middle")
             .attr("font-weight", "bold")
-            .text("Covid-19 " + metric_label);
+            .text("Covid-19" + metric_label);
         svg.select(".legendQuant")
             .style("font-size", "12px")
             .style("font-weight", "bold")
