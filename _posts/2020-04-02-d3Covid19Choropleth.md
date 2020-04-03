@@ -116,7 +116,7 @@ var source_link = svg.append("text")
     .attr("text-anchor", "start")
     .attr("y", height - 10)
     .attr("x", width - 425)
-    .html("<a href=https://github.com/nytimes/covid-19-data target=_blank color=blue>https://github.com/nytimes/covid-19-data</a>");
+    .html("<a href=https://github.com/nytimes/covid-19-data target=_blank color=blue>The New York Times</a>");
 
 
 queue()
