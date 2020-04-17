@@ -15,7 +15,7 @@ The NYT GitHub repository's README provides detail on the data files, their meth
 Before setting you loose on the interactive bar chart, some details are necessary:
 1. The radio buttons at the top allow you to toggle between confirmed cases of Covid-19 and Covid-19-related deaths.  The bar chart and the county-level data (see #3 below) will correspond to your selection.
 2. The slider is set to the latest date for which data are available by default.  You can see the cumulative counts for earlier dates by dragging left, and later dates by dragging right.
-3. Hovering your cursor over one of the state bars will do two things:
+3. Hovering your cursor over one of the state bars or state names will do two things:
     1. Show a tooltip displaying the cumulative count of confirmed cases or deaths (depending on your radio button selection) and what fraction of the national total the state represented on the selected date.
     2. Reveal a list of the counties in the state (to the right of the bar chart) containing the count by county and what fraction of the state total the county represented on the selected date.
 4. **If the "Deaths" radio button is selected**: The first reported Covid-19-related death did not occur until February 29, 2020 (1 reported death in Washington State).  However, the slider bar still allows you to go all the way back to January 21, 2020 (the date of the first reported Covid-19 case in the U.S.), and the bar chart will continue to list any states that had __cases__ on the selected date, even if a given state had no covid-19-related deaths by that date.  This allows you to keep track of which states had confirmed cases, even if no deaths had been reported.  As an example, on February 29, 2020 Washington State was the only state with a reported Covid-19-related death; therefore, a bar appears for Washington indicating 1 Covid-19-related death.  Moreover, by February 29th nine other states had Covid-19 confirmed cases: AZ, CA, IL, MA, NE, OR, TX, UT, and WI.  These other nine states are listed under Washington in the bar plot, but they have no bars showing because there are no Covid-19 related deaths for those states as of February 29th.
@@ -26,6 +26,7 @@ Before setting you loose on the interactive bar chart, some details are necessar
       font-family: Nunito, sans-serif;
       font-size: 0.8em;
       stroke: none;
+      cursor: initial;
     }
 
     .x line {
@@ -35,7 +36,7 @@ Before setting you loose on the interactive bar chart, some details are necessar
     .ticks {
       font-family: Nunito, sans-serif;
       font-size: 0.7em;
-      cursor: default;
+      cursor: initial;
     }
 
     .track,
