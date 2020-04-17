@@ -144,6 +144,10 @@ Before setting you loose on the interactive bar chart, some details are necessar
       cursor: default;
       line-height: 0.4em;
     }
+    
+    .selected-element {
+      margin-top: -20px;
+    }
 
     .selected-title {
       font-family: Nunito, sans-serif;
@@ -164,7 +168,7 @@ Before setting you loose on the interactive bar chart, some details are necessar
 <script src="https://d3js.org/d3-array.v2.min.js"></script>
 <div class="controls">
     <input type="radio" class="myRadio" id="cases" value="cases" name="metric" checked>
-    <label for="cases">Confirmed Cases</label>
+    <label for="cases">Confirmed Cases   </label>
     <input type="radio" class="myRadio" id="deaths" value="deaths" name="metric">
     <label for="deaths">Deaths</label>
 </div>
