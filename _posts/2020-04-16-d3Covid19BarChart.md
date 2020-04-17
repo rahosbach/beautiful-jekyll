@@ -21,7 +21,6 @@ Before setting you loose on the interactive bar chart, some details are necessar
 4. **If the "Deaths" radio button is selected**: The first reported Covid-19-related death did not occur until February 29, 2020 (1 reported death in Washington State).  However, the slider bar still allows you to go all the way back to January 21, 2020 (the date of the first reported Covid-19 case in the U.S.), and the bar chart will continue to list any states that had __cases__ on the selected date, even if a given state had no covid-19-related deaths by that date.  This allows you to keep track of which states had confirmed cases, even if no deaths had been reported.  As an example, on February 29, 2020 Washington State was the only state with a reported Covid-19-related death; therefore, a bar appears for Washington indicating 1 Covid-19-related death.  Moreover, by February 29th nine other states had Covid-19 confirmed cases: AZ, CA, IL, MA, NE, OR, TX, UT, and WI.  These other nine states are listed under Washington in the bar plot, but they have no bars showing because there are no Covid-19 related deaths for those states as of February 29th.
 
 ### The Chart
-<br>
 <style>
     .axis .domain {
       font-family: Nunito, sans-serif;
