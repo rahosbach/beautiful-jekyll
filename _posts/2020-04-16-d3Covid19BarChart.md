@@ -66,6 +66,11 @@ Before setting you loose on the interactive bar chart, some details are necessar
       stroke-opacity: 0.5;
       stroke-width: 1.25px;
     }
+    
+    .label {
+      font-family: Nunito, sans-serif;
+      font-size: 0.7em;
+    }
 
     .tooltip {
       position: fixed;
@@ -86,7 +91,7 @@ Before setting you loose on the interactive bar chart, some details are necessar
       padding: 0.2rem 0;
     }
 
-    h3 {
+    .ttstate {
       font-family: Nunito, sans-serif;
       font-size: 0.9em;
       color: #555;
@@ -94,7 +99,7 @@ Before setting you loose on the interactive bar chart, some details are necessar
       font-weight: 600;
     }
 
-    h4 {
+    .ttbody {
       font-family: Nunito, sans-serif;
       font-size: 0.8em;
       color: #555;
@@ -162,8 +167,8 @@ Before setting you loose on the interactive bar chart, some details are necessar
 </div>
 <div class="tooltip">
     <div class="tip-header">
-        <h3></h3>
-        <h4></h4>
+        <div class="ttstate"></div>
+        <div class="ttbody"></div>
     </div>
     <div class="tip-body"></div>
 </div>
@@ -268,9 +273,9 @@ Before setting you loose on the interactive bar chart, some details are necessar
             .transition()
             .style("opacity", 0.98);
 
-        tip.select("h3")
+        tip.select(".ttstate")
             .html(barData.state);
-        tip.select("h4")
+        tip.select(".ttbody")
             .html(d3.select('.label')._groups[0][0].textContent + ", 2020");
 
         d3.select(".tip-body")
