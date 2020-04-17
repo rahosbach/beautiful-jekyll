@@ -142,7 +142,7 @@ Before setting you loose on the interactive bar chart, some details are necessar
       overflow: auto;
       font-size: 0.6em;
       cursor: default;
-      line-height: 0.7em;
+      line-height: 0.4em;
     }
 
     .selected-title {
@@ -362,7 +362,7 @@ Before setting you loose on the interactive bar chart, some details are necessar
             left: 120
         };
         const width = 400 - margin.left - margin.right;
-        const height = 1000 - margin.top - margin.bottom;
+        const height = 800 - margin.top - margin.bottom;
 
         // Scales.
         const xScale = d3.scaleLinear()
