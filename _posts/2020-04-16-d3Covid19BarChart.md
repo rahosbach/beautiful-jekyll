@@ -21,17 +21,10 @@ Before setting you loose on the interactive bar chart, some details are necessar
 4. **If the "Deaths" radio button is selected**: The first reported Covid-19-related death did not occur until February 29, 2020 (1 reported death in Washington State).  However, the slider bar still allows you to go all the way back to January 21, 2020 (the date of the first reported Covid-19 case in the U.S.), and the bar chart will continue to list any states that had __cases__ on the selected date, even if a given state had no covid-19-related deaths by that date.  This allows you to keep track of which states had confirmed cases, even if no deaths had been reported.  As an example, on February 29, 2020 Washington State was the only state with a reported Covid-19-related death; therefore, a bar appears for Washington indicating 1 Covid-19-related death.  Moreover, by February 29th nine other states had Covid-19 confirmed cases: AZ, CA, IL, MA, NE, OR, TX, UT, and WI.  These other nine states are listed under Washington in the bar plot, but they have no bars showing because there are no Covid-19 related deaths for those states as of February 29th.
 
 ### The Chart
-
+<br>
 <style>
-    svg {
-      border: 1 px solid #ccc;
-    }
-
-    body, text {
-      font-family: Nunito, sans-serif;
-    }
-
     .axis .domain {
+      font-family: Nunito, sans-serif;
       stroke: none;
     }
 
@@ -40,6 +33,7 @@ Before setting you loose on the interactive bar chart, some details are necessar
     }
 
     .ticks {
+      font-family: Nunito, sans-serif;
       font: 12px sans-serif;
     }
 
@@ -82,15 +76,18 @@ Before setting you loose on the interactive bar chart, some details are necessar
     }
 
     .tip-header {
+      font-family: Nunito, sans-serif;
       border-bottom: 2px solid white;
       padding: 0.9rem 1rem;
     }
 
     .tip-body {
+      font-family: Nunito, sans-serif;
       padding: 0.2rem 0;
     }
 
     h3 {
+      font-family: Nunito, sans-serif;
       font-size: 0.9em;
       color: #555;
       margin: 0;
@@ -98,6 +95,7 @@ Before setting you loose on the interactive bar chart, some details are necessar
     }
 
     h4 {
+      font-family: Nunito, sans-serif;
       font-size: 0.8em;
       color: #555;
       margin: 0;
@@ -105,6 +103,7 @@ Before setting you loose on the interactive bar chart, some details are necessar
     }
 
     .tip-info {
+      font-family: Nunito, sans-serif;
       margin: 0;
       padding: 0.3rem 1em;
       font-size: 0.8em;
@@ -125,6 +124,7 @@ Before setting you loose on the interactive bar chart, some details are necessar
     }
 
     .selected-header {
+      font-family: Nunito, sans-serif;
       background: #f0f0f0;
       color: #777;
       padding: 0.5rem 2rem;
@@ -133,12 +133,14 @@ Before setting you loose on the interactive bar chart, some details are necessar
     }
 
     .selected-body {
+      font-family: Nunito, sans-serif;
       overflow: auto;
-      font-size: 0.8em;
+      font-size: 0.7em;
       cursor: default;
     }
 
     .selected-title {
+      font-family: Nunito, sans-serif;
       font-weight: 600;
     }
 </style>
