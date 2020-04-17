@@ -24,7 +24,7 @@ Before setting you loose on the interactive bar chart, some details are necessar
 <style>
     .axis .domain {
       font-family: Nunito, sans-serif;
-      font-size: 0.7em;
+      font-size: 0.8em;
       stroke: none;
     }
 
@@ -142,6 +142,10 @@ Before setting you loose on the interactive bar chart, some details are necessar
       overflow: auto;
       font-size: 0.7em;
       cursor: default;
+    }
+    
+    .selected-element {
+      line-height:1em
     }
 
     .selected-title {
