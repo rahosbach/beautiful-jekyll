@@ -250,27 +250,37 @@ Before setting you loose on the interactive bar chart, some details are necessar
     };
 
     // Tooltip handler.
-    function mouseover(element, dataForDate) {
+    function mouseover(element, dataForDate, metric) {
 
         // Get bar data.
-        const barData = d3.select(element).data()[0];
+        var barData = d3.select(element).data()[0];
+
+        if (barData.length) {
+            // For hovering over a state name (not the bar), a string
+            // will be returned that has a length associated with it.
+            const preState = barData;
+            const preVal = d3.sum(dataForDate.filter(d => d.state == preState), d=> d[metric]);
+            if (metric == "cases") {
+                barData = {"state": preState, "cases": preVal};
+            } else {
+                barData = {"state": preState, "deaths": preVal};
+            };
+        };
+
+        var nationalTotal = d3.sum(dataForDate, d => d[metric]);
 
         // Get metric.
-        if (barData.cases) {
-            var metric = "cases"
-            var nationalTotal = d3.sum(dataForDate, d => d[metric]);
+        if (metric == "cases") {
             var bodyData = [
                 ['Confirmed Cases', d3.format(",")(barData[metric])],
                 ['U.S. Fraction', d3.format(".1%")(barData[metric] / nationalTotal)]
             ];
         } else {
-            var metric = "deaths"
-            var nationalTotal = d3.sum(dataForDate, d => d[metric]);
             var bodyData = [
                 ['Deaths', d3.format(",")(barData[metric])],
                 ['U.S. Fraction', d3.format(".1%")(barData[metric] / nationalTotal)]
             ];
-        }
+        };
 
         // Filter date data down to selected state and sort
         var stateData = dataForDate
@@ -520,10 +530,16 @@ Before setting you loose on the interactive bar chart, some details are necessar
                 .attr("x", dateScale(date))
                 .text(formatDateForLabel(date));
 
-            // Add tooltip.
+            // Add tooltip and county data.
             d3.selectAll(".bar")
                 .on("mouseover", function() {
-                    mouseover(this, dataClean);
+                    mouseover(this, dataClean, metric);
+                })
+                .on("mousemove", mousemove)
+                .on("mouseout", mouseout);
+            d3.select(".y.axis").selectAll(".tick")
+                .on("mouseover", function() {
+                    mouseover(this, dataClean, metric);
                 })
                 .on("mousemove", mousemove)
                 .on("mouseout", mouseout);
@@ -558,16 +574,6 @@ Before setting you loose on the interactive bar chart, some details are necessar
         d3.select(".selected-container")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom);
-
-        function selected(dataSelected) {
-            debugger;
-        }
-
-        // Selected elements handler.
-        d3.selectAll(".bar")
-            .on("click", function(d) {
-                selected(d);
-            });
     };
 
     // Load data.
