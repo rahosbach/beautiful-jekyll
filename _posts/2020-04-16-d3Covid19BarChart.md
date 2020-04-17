@@ -148,7 +148,7 @@ Before setting you loose on the interactive bar chart, some details are necessar
       font-weight: 600;
     }
     
-    .myRadio {
+    .controls label {
       font-family: Nunito, sans-serif;
       font-size: 0.8em;
     }
