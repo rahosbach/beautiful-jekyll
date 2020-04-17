@@ -146,8 +146,10 @@ Before setting you loose on the interactive bar chart, some details are necessar
 <script src="https://d3js.org/d3.v5.min.js"></script>
 <script src="https://d3js.org/d3-array.v2.min.js"></script>
 <div class="controls">
-    <input type="radio" class="myRadio" value="cases" name="mode" checked>Confirmed Cases</input>
-    <input type="radio" class="myRadio" value="deaths" name="mode">Deaths</input>
+    <input type="radio" class="myRadio" id="cases" value="cases" name="metric" checked>
+    <label for="cases">Confirmed Cases</label>
+    <input type="radio" class="myRadio" id="deaths" value="deaths" name="metric">
+    <label for="deaths">Deaths</label>
 </div>
 <div class="slider-container"></div>
 <div class="flex-container">
@@ -342,7 +344,7 @@ Before setting you loose on the interactive bar chart, some details are necessar
             bottom: 40,
             left: 120
         };
-        const width = 500 - margin.left - margin.right;
+        const width = 400 - margin.left - margin.right;
         const height = 800 - margin.top - margin.bottom;
 
         // Scales.
