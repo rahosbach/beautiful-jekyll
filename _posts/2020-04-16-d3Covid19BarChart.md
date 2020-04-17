@@ -35,6 +35,7 @@ Before setting you loose on the interactive bar chart, some details are necessar
     .ticks {
       font-family: Nunito, sans-serif;
       font-size: 0.7em;
+      cursor: default;
     }
 
     .track,
