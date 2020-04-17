@@ -33,7 +33,7 @@ Before setting you loose on the interactive bar chart, some details are necessar
 
     .ticks {
       font-family: Nunito, sans-serif;
-      font: 12px sans-serif;
+      font-size: 0.7em;
     }
 
     .track,
@@ -149,7 +149,7 @@ Before setting you loose on the interactive bar chart, some details are necessar
     }
     
     .controls {
-      margin-left:100px;
+      margin-left:50px;
     }
     
     .controls label {
@@ -360,7 +360,7 @@ Before setting you loose on the interactive bar chart, some details are necessar
             left: 120
         };
         const width = 400 - margin.left - margin.right;
-        const height = 800 - margin.top - margin.bottom;
+        const height = 1000 - margin.top - margin.bottom;
 
         // Scales.
         const xScale = d3.scaleLinear()
