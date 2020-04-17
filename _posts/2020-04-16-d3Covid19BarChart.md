@@ -148,6 +148,11 @@ Before setting you loose on the interactive bar chart, some details are necessar
       font-family: Nunito, sans-serif;
       font-weight: 600;
     }
+    
+    .myRadio {
+      font-family: Nunito, sans-serif;
+      font-size: 0.8em;
+    }
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&display=swap" rel="stylesheet">
 <script src="https://d3js.org/d3.v5.min.js"></script>
