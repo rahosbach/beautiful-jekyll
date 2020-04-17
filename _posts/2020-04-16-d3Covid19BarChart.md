@@ -140,12 +140,9 @@ Before setting you loose on the interactive bar chart, some details are necessar
     .selected-body {
       font-family: Nunito, sans-serif;
       overflow: auto;
-      font-size: 0.7em;
+      font-size: 0.6em;
       cursor: default;
-    }
-    
-    .selected-element {
-      line-height:1em
+      line-height: 0.7em;
     }
 
     .selected-title {
