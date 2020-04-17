@@ -24,6 +24,7 @@ Before setting you loose on the interactive bar chart, some details are necessar
 <style>
     .axis .domain {
       font-family: Nunito, sans-serif;
+      font-size: 0.7em;
       stroke: none;
     }
 
