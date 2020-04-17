@@ -147,7 +147,7 @@ Before setting you loose on the interactive bar chart, some details are necessar
     
     .selected-element {
       margin-top: 5px;
-      margin-bottom: -20px;
+      margin-bottom: 0px;
     }
 
     .selected-title {
