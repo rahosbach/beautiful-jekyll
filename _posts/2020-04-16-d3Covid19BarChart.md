@@ -148,6 +148,10 @@ Before setting you loose on the interactive bar chart, some details are necessar
       font-weight: 600;
     }
     
+    .controls {
+      margin-left:100px;
+    }
+    
     .controls label {
       font-family: Nunito, sans-serif;
       font-size: 0.8em;
