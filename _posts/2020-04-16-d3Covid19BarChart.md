@@ -181,7 +181,7 @@ Before setting you loose on the interactive bar chart, some details are necessar
 <div class="flex-container">
     <div class="bar-chart-container"></div>
     <div class="selected-container">
-        <div class="selected-header">Hover over a bar...</div>
+        <div class="selected-header">Hover over a bar or state name...</div>
         <div class="selected-body"></div>
 </div>
 <div class="tooltip">
@@ -484,7 +484,7 @@ Before setting you loose on the interactive bar chart, some details are necessar
             const t = d3.transition().duration(dur);
 
             // Remove any county data for a previously-selected state
-            d3.select('.selected-header')._groups[0][0].textContent = "Hover over a bar...";
+            d3.select('.selected-header')._groups[0][0].textContent = "Hover over a bar or state name...";
             d3.select(".selected-body")
                 .selectAll(".selected-element")
                 .transition(t)
