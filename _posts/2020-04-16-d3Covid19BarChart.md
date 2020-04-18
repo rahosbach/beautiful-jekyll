@@ -26,7 +26,6 @@ Before setting you loose on the interactive bar chart, some details are necessar
       font-family: Nunito, sans-serif;
       font-size: 0.8em;
       stroke: none;
-      cursor: initial;
     }
 
     .x line {
@@ -36,7 +35,10 @@ Before setting you loose on the interactive bar chart, some details are necessar
     .ticks {
       font-family: Nunito, sans-serif;
       font-size: 0.7em;
-      cursor: initial;
+    }
+    
+    .tick {
+      cursor: default;
     }
 
     .track,
