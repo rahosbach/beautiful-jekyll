@@ -326,9 +326,9 @@ Before setting you loose on the interactive bar chart, some details are necessar
                 enter => enter
                 .append("p")
                 .attr("class", "selected-element")
-                .html(d => `<span class="selected-title">${d.county} County</span> | ${d3.format(",")(d[metric])} ${((d[metric] == 1) ? metric.slice(0,-1) : metric)} (${d3.format(".1%")(d[metric]/stateTotal)} of state total)`),
+                .html(d => `<span class="selected-title">${d.county} County</span> | ${d3.format(",")(d[metric])} ${((d[metric] == 1) ? metric.slice(0,-1) : metric)} (${d3.format(".1%")(d[metric]/stateTotal || 0)} of state total)`),
                 update => update
-                .html(d => `<span class="selected-title">${d.county} County</span> | ${d3.format(",")(d[metric])} ${((d[metric] == 1) ? metric.slice(0,-1) : metric)} (${d3.format(".1%")(d[metric]/stateTotal)} of state total)`),
+                .html(d => `<span class="selected-title">${d.county} County</span> | ${d3.format(",")(d[metric])} ${((d[metric] == 1) ? metric.slice(0,-1) : metric)} (${d3.format(".1%")(d[metric]/stateTotal || 0)} of state total)`),
                 exit => exit.remove()
             );
     };
