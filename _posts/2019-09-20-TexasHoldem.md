@@ -1,6 +1,6 @@
 ---
 layout: post
-title: What Affect does the Number of Players have on Texas Holdem Results?
+title: What Effect does the Number of Players have on Texas Holdem Results?
 tags: [heatmap, line plot, poker, Seaborn, Texas Holdem]
 ---
 
